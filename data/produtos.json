@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "nome": "Notebook Dell XPS 13",
+      "codigoBarras": "7891234567890",
+      "descricao": "Notebook com telas de alta resolução ",      
+      "categoria": "Informática",
+      "fornecedor": "Dell Brasil",
+      "status": "Associado"
+    },
+    {
+      "id": 2,
+      "nome": "Mouse Logitech",
+      "codigoBarras": "7891234567891",
+      "descricao": "Mouse Sem Fio",
+      "categoria": "Periféricos",
+      "fornecedor": "Logitech Store",
+      "status": "Associado"
+    },
+    {
+      "id": 3,
+      "nome": "Teclado Mecânico RGB",
+      "codigoBarras": "7891234567892",
+      "descricao": "Teclado com luz",      
+      "categoria": "Periféricos",
+      "fornecedor": "Pendente",
+      "status": "Pendente"
+    },
+    {
+      "id": 4,
+      "nome": "Monitor UltraWide 29",
+      "codigoBarras": "7891234567893",
+      "descricao": "Monitor ultrawide",      
+      "categoria": "Monitores",
+      "fornecedor": "LG Electronics",
+      "status": "Associado"
+    },
+    {
+      "id": 5,
+      "nome": "Cadeira Ergonômica Office",
+      "codigoBarras": "7891234567894",
+      "descricao": "Cadeira de escritório ajustável com apoio lombar",
+      "categoria": "Móveis",
+      "fornecedor": "Pendente",
+      "status": "Pendente"
+    }
+]

@@ -1,0 +1,5 @@
+[
+  { "id": "101", "nomeEmpresa": "Tech Distribuidora LTDA", "cnpj": "12.345.678/0001-95" },
+  { "id": "102", "nomeEmpresa": "Logística & Cia S.A.", "cnpj": "98.765.432/0001-10" },
+  { "id": "103", "nomeEmpresa": "Importadora Global Eireli", "cnpj": "45.678.912/0001-33" }
+]
