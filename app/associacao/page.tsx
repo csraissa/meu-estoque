@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import produtosMock from '@/data/produtos.json'; 
@@ -20,7 +20,7 @@ interface Fornecedor {
   cnpj: string;
 }
 
-export default function AssociacaoPage() {
+function AssociacaoConteudo() {
   const router = useRouter();
 
   const [fornecedoresDisponiveis] = useState<Fornecedor[]>(fornecedoresMock);
@@ -260,5 +260,12 @@ export default function AssociacaoPage() {
 
       </div>
 
+  );
+}
+export default function AssociacaoPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-gray-500">Carregando associação...</div>}>
+      <AssociacaoConteudo />
+    </Suspense>
   );
 }
