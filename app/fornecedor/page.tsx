@@ -2,7 +2,7 @@
 
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
-import fornecedoresMock from '@/data/fornecedores.json'; // Importa o JSON
+import fornecedoresMock from '@/data/fornecedores.json';
 
 interface FornecedorMock {
   id?: number | string;  
@@ -19,7 +19,7 @@ export default function FornecedoresPage() {
 
   const [fornecedores, setFornecedores] = useState<FornecedorMock[]>(fornecedoresMock);
 
-   // Estado para armazenar os campos do formulário
+   // Para armazenar os campos do formulário
   const [formData, setFormData] = useState({
     nomeEmpresa: '',
     cnpj: '',
@@ -76,7 +76,7 @@ export default function FornecedoresPage() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-  // informações inválidas no form
+  // Informações inválidas no form
   const temCampoVazio = Object.values(formData).some(
   (valor) => typeof valor === 'string' && !valor.trim()
  );

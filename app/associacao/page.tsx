@@ -25,22 +25,22 @@ export default function AssociacaoPage() {
 
   const [fornecedoresDisponiveis] = useState<Fornecedor[]>(fornecedoresMock);
 
-  // Lê o id da URL
+
   const searchParams = useSearchParams();
   const idUrl = searchParams.get('id');
 
   const [produtoSelecionadoId, setProdutoSelecionadoId] = useState(idUrl || '');
 
-const produto = (produtosMock as Produto[]).find(
+  const produto = (produtosMock as Produto[]).find(
   (p) => String(p.id) === produtoSelecionadoId
 );
 
-  // Estado para armazenar os fornecedores já associados a este produto
+  // Para armazenar os fornecedores já associados ao produto
   const [fornecedoresAssociados, setFornecedoresAssociados] = useState<Fornecedor[]>([
     { id: '101', nomeEmpresa: 'Tech Distribuidora LTDA', cnpj: '12.345.678/0001-95' },
   ]);
 
-  // Estado para armazenar o ID do fornecedor selecionado no dropdown
+  // Para armazenar o ID do fornecedor
   const [fornecedorSelecionadoId, setFornecedorSelecionadoId] = useState('');
 
   // Função para associar um novo fornecedor ao produto
@@ -52,7 +52,7 @@ const produto = (produtosMock as Produto[]).find(
       return;
     }
 
-    // Verificar se já está associado ao produto
+    // Verificar se já está associado
     const jaAssociado = fornecedoresAssociados.some(
       (f) => f.id === fornecedorSelecionadoId
     );
@@ -62,11 +62,10 @@ const produto = (produtosMock as Produto[]).find(
       return;
     }
 
-    // Encontra o objeto do fornecedor selecionado
     const fornecedorParaAdicionar = fornecedoresDisponiveis.find(
       (f) => f.id === fornecedorSelecionadoId
     );
-    // Adicionar o novo fornecedor à lista
+    // Adicionar o novo fornecedor na lista
     if (fornecedorParaAdicionar) {
       setFornecedoresAssociados((prev) => [...prev, fornecedorParaAdicionar]);
       setFornecedorSelecionadoId(''); // Limpa o dropdown após associar
@@ -74,7 +73,7 @@ const produto = (produtosMock as Produto[]).find(
     }
   };
 
-    // Função para desassociar um fornecedor
+    // Para desassociar um fornecedor
     const handleDesassociar = (id: number | string) => {
        setFornecedoresAssociados((prev) =>
          prev.filter((fornecedor) => fornecedor.id !== id)
@@ -99,7 +98,6 @@ const produto = (produtosMock as Produto[]).find(
          </h1>
      </div>
 
-
     {/* SELEÇÃO DO PRODUTO DO ESTOQUE */}
     <div className="bg-white p-6 rounded-lg shadow-md">
      <label className="block text-sm font-semibold text-gray-800 mb-2">
@@ -119,8 +117,7 @@ const produto = (produtosMock as Produto[]).find(
      </select>
     </div>
    
-   
-    {/* DETALHES DO PRODUTO (SOMENTE LEITURA) */}
+    {/* DETALHES DO PRODUTO (SOMENTE LEITURA AQUI) */}
   <div className="bg-white p-6 rounded-lg shadow-md">
   <h2 className="text-lg font-semibold text-gray-800 border-b pb-3 mb-4">
     Detalhes do Produto
@@ -141,7 +138,7 @@ const produto = (produtosMock as Produto[]).find(
         />
       </div>
 
-      {/* Inputs lado a lado com a imagem */}
+      {/* Inputs lado a lado */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 w-full">
         <div>
           <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">
@@ -169,7 +166,7 @@ const produto = (produtosMock as Produto[]).find(
       </div>
     </div>
 
-    {/* LINHA INFERIOR: Descrição ocupando a largura total */}
+    {/* LINHA INFERIOR: Descrição */}
     <div>
       <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">
         Descrição

@@ -27,8 +27,7 @@ export default function ProdutosPage() {
 
     const [produtos, setProdutos] = useState<ProdutoMock[]>(produtosMock);
  
-
-  // Estado para armazenar os valores do formulário
+  // Para armazenar os valores do formulário
   const [formData, setFormData] = useState({
     nome: '',
     codigoBarras: '',
@@ -84,7 +83,7 @@ const handleSubmit = (e: FormEvent) => {
     if (novosErros.codigoBarras) alert(novosErros.codigoBarras);
     return;
   }
-  // Cria o produto final com a categoria
+  // Criar o produto final com a categoria
   const categoriaFinal =
     formData.categoria === 'Outro' ? formData.outraCategoria : formData.categoria;
   const novoProduto: ProdutoMock = {
@@ -252,7 +251,7 @@ const handleSubmit = (e: FormEvent) => {
             />
           </div>
 
-          {/* AÇÕES DE CANCELAR E SALVAR */}
+          {/* CANCELAR E SALVAR */}
           <div className="flex justify-end gap-3 pt-6 border-t mt-6">
             <button
               type="button"
